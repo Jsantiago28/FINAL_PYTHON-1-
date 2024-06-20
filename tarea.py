@@ -1,10 +1,7 @@
-from datetime import datetime
-
-class Tarea:
-    def __init__(self, descripcion, fecha_limite, prioridad, categoria):
-        self.id = int(datetime.timestamp(datetime.now()))
-        self.descripcion = descripcion
-        self.fecha_limite = fecha_limite
-        self.prioridad = prioridad
-        self.categoria = categoria
-        self.estado = "pendiente"
+def agregar_tarea(gestor):
+    """Solicita los detalles de una nueva tarea al usuario y la agrega usando el gestor de tareas. """
+    descripcion = input("Descripción: ")
+    fecha_limite = input("Fecha Límite (YYYY-MM-DD): ")
+    prioridad = input("Prioridad (baja, media, alta): ")
+    categoria = input("Categoría: ")
+    gestor.crear_tarea(descripcion, fecha_limite, prioridad, categoria)  # Llama al método crear_tarea del gestor
